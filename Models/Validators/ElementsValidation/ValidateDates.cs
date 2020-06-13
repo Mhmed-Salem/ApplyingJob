@@ -18,7 +18,7 @@ namespace JobApplying.Models.Validators
 
         private bool ValidateGraduationDate(int graduationYear)
         {
-            return graduationYear > 1950;
+            return graduationYear > 19;
         }
     }
 }
