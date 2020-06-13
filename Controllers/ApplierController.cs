@@ -9,9 +9,9 @@ namespace JobApplying.Controllers
 {
     public class ApplierController:Controller
     {
-        private IApplierRepo<Applier> _repo;
+        private IApplierRepo<PartialApplier> _repo;
 
-        public ApplierController(IApplierRepo<Applier> repo)
+        public ApplierController(IApplierRepo<PartialApplier> repo)
         {
             _repo = repo;
         }

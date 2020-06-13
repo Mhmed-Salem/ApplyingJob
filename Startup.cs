@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JobApplying.Models;
+using JobApplying.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,7 +37,8 @@ namespace JobApplying
                 builder => builder.UseSqlServer(Configuration.GetConnectionString("AppConnection"))
                     .UseLoggerFactory(ConsoleLoggetFactory)
             ); 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(); 
+            services.AddScoped<IApplierRepo<PartialApplier>,ApplierRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

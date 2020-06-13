@@ -40,7 +40,7 @@ namespace JobApplying.Models.Repositories
         public async Task<bool> AddApplier(Applier applier)
         {
             await _context.Appliers.AddAsync(applier);
-            return _context.SaveChanges() > 0;
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
