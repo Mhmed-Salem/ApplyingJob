@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace JobApplying.Models.Repositories
 {
@@ -6,6 +7,6 @@ namespace JobApplying.Models.Repositories
     {
         Applier GetApplier(int id);
         List<T> GetAllAppliers();
-        bool AddApplier(Applier applier);
+        Task<bool> AddApplier(Applier applier);
     }
 }

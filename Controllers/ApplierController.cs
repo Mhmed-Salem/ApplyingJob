@@ -8,5 +8,6 @@ namespace JobApplying.Controllers
         {
             return View();
         }
+        
     }
 }

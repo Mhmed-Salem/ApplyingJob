@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace JobApplying.Models.Repositories
@@ -36,9 +37,9 @@ namespace JobApplying.Models.Repositories
             }).ToList();
         }
 
-        public bool AddApplier(Applier applier)
+        public async Task<bool> AddApplier(Applier applier)
         {
-            _context.Appliers.Add(applier);
+            await _context.Appliers.AddAsync(applier);
             return _context.SaveChanges() > 0;
         }
     }
