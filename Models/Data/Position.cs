@@ -10,6 +10,7 @@ namespace JobApplying.Models
         }
         public int Id { set; get; }
         public string Pos { set; get; }
+        public bool IsAvailable { set; get; }
         public IList<Applier> Appliers { set; get; }
     }
 

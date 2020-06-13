@@ -1,13 +1,38 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using JobApplying.Models;
+using JobApplying.Models.Repositories;
+using JobApplying.Models.Validators;
+using Microsoft.AspNetCore.Mvc;
 
 namespace JobApplying.Controllers
 {
     public class ApplierController:Controller
     {
+        private IApplierRepo<Applier> _repo;
+
+        public ApplierController(IApplierRepo<Applier> repo)
+        {
+            _repo = repo;
+        }
         public IActionResult AddApplier()
         {
             return View();
         }
+
+      /**  [HttpPost]
+        public Task<IActionResult> AddApplier(Applier applier)
+        {
+            var validation = new ValidateApplier(new List<IValidate<Applier>>()
+            {
+                new ValidateDates(),
+                new ValidateEmail(),
+                new ValidatePhone(),
+                new ValidateName(),
+            }, applier);
+            
+        }
+        **/
         
     }
 }
