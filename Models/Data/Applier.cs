@@ -11,6 +11,7 @@ namespace JobApplying.Models
             PreviousWorks=new List<PreviousWork>();
         }
         public int Id { set; get; }
+        public string Name { set; get; }
         public DateTime BirthDate { set; get; }
         public string Email { set; get; }
         public string Phone { set; get; }
@@ -25,6 +26,8 @@ namespace JobApplying.Models
         public int GraduatingYear { set; get; }
         public int GraduatingGrade { set; get; }
         public int PositionId { set; get; }
+        public DateTime ApplyingDateTime { set; get; }
+        public bool IsSeen { set; get; }
         public Position Position { set; get; }
         public IList<Experience> Experiences { set; get; }
         public IList<PreviousWork>PreviousWorks { set; get; }
